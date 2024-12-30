@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Projects = () => {
   return (
-    <div>Projects</div>
-  )
-}
+    <section className="py-20 bg-light-primary dark:bg-dark-primary">
+      <div></div>
+    </section>
+  );
+};
 
-export default Projects
+export default Projects;
