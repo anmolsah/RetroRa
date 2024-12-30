@@ -69,7 +69,7 @@ const About = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.2 }}
                 whileHover={{ x: 10 }}
                 onHoverStart={() => playBeep()}
                 className="flex gap-4 items-start group cursor-pointer"
