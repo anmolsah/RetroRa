@@ -15,8 +15,12 @@ const Projects = () => {
           PROJECTS.EXE
         </motion.h2>
         <motion.div
-        
-        ></motion.div>
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex justify-center gap-2 md:gap-4 mb-12 flex-wrap"
+        >{categories.map((category)=>(
+          <FilterButton />
+        ))}</motion.div>
       </div>
     </section>
   );
