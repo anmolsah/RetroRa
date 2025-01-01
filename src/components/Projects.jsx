@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import FilterButton from "./portfolio/FilterButton";
 
 const Projects = () => {
+  const [filter, setFilter] = useState("all");
+
+  //const filteredProjects = 
+
   const categories = ["all", "frontend", "fullstack", "backend"];
   return (
     <section className="py-20 bg-light-primary dark:bg-dark-primary">
@@ -18,9 +23,16 @@ const Projects = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex justify-center gap-2 md:gap-4 mb-12 flex-wrap"
-        >{categories.map((category)=>(
-          <FilterButton />
-        ))}</motion.div>
+        >
+          {categories.map((category) => (
+            <FilterButton
+              key={category}
+              category={category}
+              activeFilter={filter}
+              onClick={() => setFilter(category)}
+            />
+          ))}
+        </motion.div>
       </div>
     </section>
   );
