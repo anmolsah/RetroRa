@@ -1,5 +1,3 @@
-import { title } from "framer-motion/client";
-
 export const projects = [
   {
     id: 1,
