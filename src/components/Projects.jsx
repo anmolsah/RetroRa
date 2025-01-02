@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import FilterButton from "./portfolio/FilterButton";
+import { projects } from "./../data/projects";
 
 const Projects = () => {
   const [filter, setFilter] = useState("all");
 
-  //const filteredProjects = 
+  const filteredProjects = projects.filter((project) =>
+    filter === "all" ? true : project.category === filter
+  );
 
   const categories = ["all", "frontend", "fullstack", "backend"];
   return (
@@ -33,6 +36,13 @@ const Projects = () => {
             />
           ))}
         </motion.div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <AnimatePresence mode="wait">
+          {filteredProjects.map((project,index)=>(
+
+          ))}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
