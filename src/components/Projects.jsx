@@ -39,11 +39,27 @@ const Projects = () => {
         </motion.div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <AnimatePresence mode="wait">
+            {/* {filteredProjects.map((project, index) => (
+              <ProjectCard
+                key={AllProjects.id}
+                project={project}
+                index={index}
+              />
+            ))} */}
             {filteredProjects.map((project, index) => (
-              <ProjectCard key={AllProjects.id} projects={project} index={index} />
+              <ProjectCard />
             ))}
           </AnimatePresence>
         </div>
+        {filteredProjects.length === 0 && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center font-press-start text-neon-pink mt-8"
+          >
+            NO PROJECTS FOUND
+          </motion.p>
+        )}
       </div>
     </section>
   );
