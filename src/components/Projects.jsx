@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FilterButton from "./portfolio/FilterButton";
-import { projects } from "../data/projects";
+import { AllProjects } from "../data/projects";
 import ProjectCard from "./portfolio/ProjectCard";
 
 const Projects = () => {
@@ -40,7 +40,7 @@ const Projects = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <AnimatePresence mode="wait">
             {filteredProjects.map((project, index) => (
-              <ProjectCard key={projects.id} projects={project} index={index} />
+              <ProjectCard key={AllProjects.id} projects={project} index={index} />
             ))}
           </AnimatePresence>
         </div>

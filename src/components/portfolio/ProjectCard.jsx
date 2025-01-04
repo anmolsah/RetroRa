@@ -1,7 +1,7 @@
 import React from "react";
 import useSound from "use-sound";
 import { motion } from "framer-motion";
-import { projects } from "../../data/projects";
+import { AllProjects } from "../../data/projects";
 
 const ProjectCard = () => {
   const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.5 });
@@ -24,8 +24,8 @@ const ProjectCard = () => {
     >
       <motion.div className="relative group cursor-pointer" whileHover="hover">
         <img
-          src={projects.image}
-          alt={projects.title}
+          src={AllProjects.image}
+          alt={AllProjects.title}
           className="w-full h-48 object-cover translate-transform duration-300 group-hover:scale-105"
         />
       </motion.div>

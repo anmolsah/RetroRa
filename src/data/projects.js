@@ -1,10 +1,11 @@
-export const projects = [
+import { assets } from "./../assets/assets";
+export const AllProjects = [
   {
     id: 1,
     title: "Imagnation",
     description:
       "A Text-to-Image Generator SaaS platform built with MERN stack and Razorpay integration. Transform your ideas into visuals!",
-    image: "../assets/imagination.png",
+    image: assets.project1,
     techStack: [
       "React",
       "Node.js",
@@ -22,7 +23,7 @@ export const projects = [
     title: "NetflixGemini",
     description:
       "A Netflix clone powered by GEMINI API for personalized movie recommendations. Built with React, Redux, and Firebase.",
-    image: "../assets/netflix-hme.png",
+    image: assets.project2,
     techStack: [
       "React",
       "Redux",
@@ -40,7 +41,7 @@ export const projects = [
     title: "Rahi",
     description:
       "Personalized AI-powered trip planner! With RAHi, planning your dream vacation has never been easier or more fun.",
-    image: "../assets/rahi1.png",
+    image: assets.project3,
     techStack: [
       "React",
       "Firebase",
@@ -57,7 +58,7 @@ export const projects = [
     title: "Boardy",
     description:
       "A simple and collaborative online whiteboard for drawing, sketching, and brainstorming.",
-    image: "../assets/boardyy.jpg",
+    image: assets.project4,
     techStack: ["HTML", "CSS", "JavaScript"],
     demoUrl: "https://anmolsah.github.io/Boardy/whiteboard.html",
     githubUrl:
