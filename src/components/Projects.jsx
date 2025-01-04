@@ -7,7 +7,7 @@ import ProjectCard from "./portfolio/ProjectCard";
 const Projects = () => {
   const [filter, setFilter] = useState("all");
 
-  const filteredProjects = projects.filter((project) =>
+  const filteredProjects = AllProjects.filter((project) =>
     filter === "all" ? true : project.category === filter
   );
 
