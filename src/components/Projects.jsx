@@ -10,6 +10,7 @@ const Projects = () => {
   const filteredProjects = AllProjects.filter((project) =>
     filter === "all" ? true : project.category === filter
   );
+  console.log(filteredProjects);
 
   const categories = ["all", "frontend", "fullstack", "backend"];
   return (
@@ -39,16 +40,14 @@ const Projects = () => {
         </motion.div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <AnimatePresence mode="wait">
-            {/* {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project) => (
               <ProjectCard
-                key={AllProjects.id}
+                key={project.id}
                 project={project}
-                index={index}
+                
               />
-            ))} */}
-            {filteredProjects.map((project, index) => (
-              <ProjectCard />
             ))}
+            
           </AnimatePresence>
         </div>
         {filteredProjects.length === 0 && (
