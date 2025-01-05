@@ -6,13 +6,13 @@ const FilterButton = ({ category, activeFilter, onClick }) => {
   const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.5 });
 
   const handleClick = () => {
-    playBeep(), onclick();
+    playBeep(), onClick();
   };
 
   const isActive = activeFilter === category;
   return (
     <motion.button
-      onclick={handleClick}
+      onClick={handleClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className={`px-6 py-2 font-press-start text-sm filter-corners transition-all duration-400 ${

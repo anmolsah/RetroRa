@@ -41,13 +41,8 @@ const Projects = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <AnimatePresence mode="wait">
             {filteredProjects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                
-              />
+              <ProjectCard key={project.id} project={project} />
             ))}
-            
           </AnimatePresence>
         </div>
         {filteredProjects.length === 0 && (
