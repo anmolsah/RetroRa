@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useSound } from "use-sound";
+import ProgressBar from './ui/ProgressBar';
 
 const SkillCard = ({ skill, index }) => {
   const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.5 });
@@ -20,6 +21,9 @@ const SkillCard = ({ skill, index }) => {
             .toString(16)
             .toUpperCase()}`}</span>
           <h3 className="text-xl font-press-start text-white">{skill.name}</h3>
+        </div>
+        <div className="space-y-4">
+            <ProgressBar value={skill.proficiency} />
         </div>
       </div>
     </motion.div>
