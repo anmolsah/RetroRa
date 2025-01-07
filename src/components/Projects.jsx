@@ -10,7 +10,6 @@ const Projects = () => {
   const filteredProjects = AllProjects.filter((project) =>
     filter === "all" ? true : project.category === filter
   );
-  console.log(filteredProjects);
 
   const categories = ["all", "frontend", "fullstack", "backend"];
   return (

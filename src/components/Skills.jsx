@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { skills } from '../data/skills';
+import SkillCard from './SkillCard';
 
 const Skills = () => {
   return (
@@ -13,8 +15,12 @@ const Skills = () => {
         >
           SKILL_MATRIX
         </motion.h2>
-        <div>
-          
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            skills.map((skill,index)=>(
+              <SkillCard key={skill.name} skill={skill} index={index} />
+            ))
+          }
         </div>
       </div>
     </section>
