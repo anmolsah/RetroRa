@@ -1,0 +1,51 @@
+export const skills = [
+  {
+    name: "React",
+    icon: "react",
+    proficiency: 50,
+    years: 2,
+    category: "Frontend",
+  },
+  {
+    name: "Node js",
+    icon: "server",
+    proficiency: 60,
+    years: 2,
+    category: "Backend",
+  },
+  {
+    name: "MongoDB",
+    icon: "database",
+    proficiency: 50,
+    years: 2,
+    category: "Backend",
+  },
+  {
+    name: "Javascript",
+    icon: "code",
+    proficiency: 70,
+    years: 3,
+    category: "Frontend",
+  },
+  {
+    name: "HTML",
+    icon: "html",
+    proficiency: 90,
+    years: 3,
+    category: "Frontend",
+  },
+  {
+    name: "CSS",
+    icon: "css",
+    proficiency: 90,
+    years: 3,
+    category: "Frontend",
+  },
+  {
+    name: "Express js",
+    icon: "server",
+    proficiency: 60,
+    years: 2,
+    category: "Backend",
+  },
+];

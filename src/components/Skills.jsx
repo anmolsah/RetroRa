@@ -13,6 +13,9 @@ const Skills = () => {
         >
           SKILL_MATRIX
         </motion.h2>
+        <div>
+          
+        </div>
       </div>
     </section>
   );
