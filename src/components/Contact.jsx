@@ -63,6 +63,21 @@ const Contact = () => {
               ))}
             </div>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <form className="space-y-6 bg-gray-900 p-6 pixel-corners">
+              <div>
+                <label className="block text-sm font-press-start text-neon-pink mb-2">
+                  USER_NAME
+                </label>
+                <input />
+              </div>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>
