@@ -1,9 +1,38 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useSound } from "use-sound";
+import { useForm } from "react-hook-form";
 
 const Contact = () => {
   const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.5 });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    playBeep();
+    // fetch("/api/contact", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     if (data.success) {
+    //       alert("Message sent successfully!");
+    //     } else {
+    //       alert(data.message);
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //     alert("Error sending message!");
+    //   });
+  };
   return (
     <section className="py-20 bg-retro-dark">
       <div className="container mx-auto px-4">
@@ -69,13 +98,64 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <form className="space-y-6 bg-gray-900 p-6 pixel-corners">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="space-y-6 bg-gray-900 p-6 pixel-corners"
+            >
               <div>
                 <label className="block text-sm font-press-start text-neon-pink mb-2">
                   USER_NAME
                 </label>
-                <input />
+                <input
+                  {...register("name", { required: true })}
+                  className="w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
+                />
+                {errors.name && (
+                  <span className="text-neon-pink text-xs font-ibm">
+                    REQUIRED_FIELD
+                  </span>
+                )}
               </div>
+              <div>
+                <label className="block text-sm font-press-start text-neon-pink mb-2">
+                  USER_EMAIL
+                </label>
+                <input
+                  {...register("email", {
+                    required: true,
+                    pattern: /^\S+@\S+$/i,
+                  })}
+                  className="w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
+                />
+                {errors.email && (
+                  <span className="text-neon-pink text-xs font-ibm">
+                    INAVLID_EMAIL
+                  </span>
+                )}
+              </div>
+              <div>
+                <label className="block text-sm font-press-start text-neon-pink mb-2">
+                  MESSAGE
+                </label>
+                <textarea
+                  {...register("message", { required: true })}
+                  rows={4}
+                  className="w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
+                />
+                {errors.message && (
+                  <span className="text-neon-pink text-xs font-ibm">
+                    REQUIRED_FIELD
+                  </span>
+                )}
+              </div>
+              <motion.button
+                type="submit"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-neon-pink text-white py-3 font-press-start text-sm pixel-corners neon-glow"
+              >
+                SEND_MESSAGE
+              </motion.button>
             </form>
           </motion.div>
         </div>
