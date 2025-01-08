@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.5 });
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-retro-dark">
+    <section id="home" className="min-h-screen flex items-center justify-center relative bg-retro-dark">
       <div className="absolute inset-0 opacity-10">
         <div className="grid grid-cols-12 h-full">
           {Array.from({ length: 12 }).map((_, i) => (

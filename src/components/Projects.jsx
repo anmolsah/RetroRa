@@ -13,7 +13,7 @@ const Projects = () => {
 
   const categories = ["all", "frontend", "fullstack", "backend"];
   return (
-    <section className="py-20 bg-light-primary dark:bg-dark-primary">
+    <section id="projects" className="py-20 bg-light-primary dark:bg-dark-primary">
       <div className="container mx-auto px-4 max-w-7xl">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}

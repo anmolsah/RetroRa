@@ -31,6 +31,20 @@ const Footer = () => {
                 <Linkedin className="w-6 h-6" />
               </FooterLink>
             </div>
+            <p className="mt-4 text-gray-400 font-ibm text-sm">
+              © {currentYear} ANMOL_SAH. ALL RIGHTS RESERVED
+            </p>
+          </div>
+
+          <div className="text-center md:text-right">
+            <h3 className="font-press-start text-neon-cyan text-sm mb-4">
+              STATUS
+            </h3>
+            <div className="space-x-2 font-ibm text-sm">
+              <p className="text-gray-400">UPTIME: 99.9%</p>
+              <p className="text-gray-400">LOCATION: SILIGURI_CITY_001</p>
+              <p className="text-neon-pink">SYSTEM: ONLINE</p>
+            </div>
           </div>
         </div>
       </div>
