@@ -1,18 +1,18 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { useSound } from "use-sound";
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast";
+import useSound from "use-sound";
 import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact = () => {
-  const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.5 });
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
-
+  const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.3 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
 
@@ -29,16 +29,17 @@ const Contact = () => {
       );
 
       if (result.text === "OK") {
-        toast.success("Message sent Successfully", {
+        toast.success("Message sent successfully!", {
           style: {
             background: "#2A2A2A",
             color: "#00E5FF",
             border: "1px solid #00E5FF",
           },
         });
+        reset();
       }
     } catch (error) {
-      toast.error("Failed to send message", {
+      toast.error("Failed to send message. Please try again.", {
         style: {
           background: "#2A2A2A",
           color: "#FF1B8D",
@@ -49,8 +50,9 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
+
   return (
-    <section id="contact" className="py-20 bg-retro-dark">
+    <section className="py-20 bg-retro-dark">
       <Toaster position="top-right" />
       <div className="container mx-auto px-4">
         <motion.h2
@@ -61,6 +63,7 @@ const Contact = () => {
         >
           CONTACT_TERMINAL
         </motion.h2>
+
         <div className="grid md:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -68,40 +71,31 @@ const Contact = () => {
             viewport={{ once: true }}
             className="bg-gray-900 p-6 pixel-corners"
           >
-            <h3 className="text-xl font-pres-start mb-6 text-neon-cyan">
+            <h3 className="text-xl font-press-start mb-6 text-neon-cyan">
               SYSTEM_INFO
             </h3>
             <div className="space-y-4 mb-8 font-ibm">
               <div className="flex items-center gap-4">
                 <span className="text-neon-pink">EMAIL:</span>
-                <span className="text-white">annifind010@gmail.com</span>
+                <span className="text-white">player1@retro.dev</span>
               </div>
               <div className="flex items-center gap-4">
-                <span className="text-neon-pink">LOCATION</span>
-                <span className="text-white">SILIGURI_CITY_001</span>
+                <span className="text-neon-pink">LOCATION:</span>
+                <span className="text-white">CYBER_CITY_01</span>
               </div>
               <div className="flex items-center gap-4">
-                <span className="text-neon-pink">STATUS</span>
+                <span className="text-neon-pink">STATUS:</span>
                 <span className="text-neon-cyan">ONLINE</span>
               </div>
             </div>
 
             <div className="flex gap-4">
-              {[
-                { platform: "GITHUB", url: "https://github.com/anmolsah" },
-                { platform: "TWITTER", url: "https://x.com/anni_i29" },
-                {
-                  platform: "LINKEDIN",
-                  url: "https://www.linkedin.com/in/anmol-sah-551083238/",
-                },
-              ].map(({ platform, url }) => (
+              {["GITHUB", "TWITTER", "LINKEDIN"].map((platform) => (
                 <motion.a
                   key={platform}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
                   whileHover={{ scale: 1.1 }}
-                  className="px-3 py-2 bg-gray-800 text-neon-cyan font-press-start text-xs pixel-corners hover:text-neon-pink"
+                  className="px-4 py-2 bg-gray-800 text-neon-cyan font-press-start text-xs pixel-corners hover:text-neon-pink"
                   onClick={() => playBeep()}
                 >
                   {platform}
@@ -134,6 +128,7 @@ const Contact = () => {
                   </span>
                 )}
               </div>
+
               <div>
                 <label className="block text-sm font-press-start text-neon-pink mb-2">
                   USER_EMAIL
@@ -147,10 +142,11 @@ const Contact = () => {
                 />
                 {errors.email && (
                   <span className="text-neon-pink text-xs font-ibm">
-                    INAVLID_EMAIL
+                    INVALID_EMAIL
                   </span>
                 )}
               </div>
+
               <div>
                 <label className="block text-sm font-press-start text-neon-pink mb-2">
                   MESSAGE
@@ -166,12 +162,16 @@ const Contact = () => {
                   </span>
                 )}
               </div>
+
               <motion.button
                 type="submit"
-                disabled={{ isSubmitting }}
-                whileHover={{ scale: 1.05 }}
+                disabled={isSubmitting}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-neon-pink text-white py-3 font-press-start text-sm pixel-corners neon-glow"
+                className={`w-full bg-neon-pink text-white py-3 font-press-start text-sm pixel-corners neon-glow
+                          ${
+                            isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                          }`}
               >
                 {isSubmitting ? "SENDING..." : "SEND_MESSAGE"}
               </motion.button>
