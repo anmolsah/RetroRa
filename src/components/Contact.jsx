@@ -16,27 +16,38 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
 
-  const onSubmit = (data) => {
-    playBeep();
-    // fetch("/api/contact", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.success) {
-    //       alert("Message sent successfully!");
-    //     } else {
-    //       alert(data.message);
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //     alert("Error sending message!");
-    //   });
+  const onSubmit = async (data) => {
+    try {
+      setIsSubmitting(true);
+      playBeep();
+
+      const result = await emailjs.sendForm(
+        "service_6z78jzq",
+        "template_lk7wp7g",
+        formRef.current,
+        "xUmwXLuJH54AecuvR"
+      );
+
+      if (result.text === "OK") {
+        toast.success("Message sent Successfully", {
+          style: {
+            background: "#2A2A2A",
+            color: "#00E5FF",
+            border: "1px solid #00E5FF",
+          },
+        });
+      }
+    } catch (error) {
+      toast.error("Failed to send message", {
+        style: {
+          background: "#2A2A2A",
+          color: "#FF1B8D",
+          border: "1px solid #FF1B8D",
+        },
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return (
     <section id="contact" className="py-20 bg-retro-dark">
