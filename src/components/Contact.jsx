@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useSound } from "use-sound";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.5 });
@@ -10,6 +12,9 @@ const Contact = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef(null);
 
   const onSubmit = (data) => {
     playBeep();
