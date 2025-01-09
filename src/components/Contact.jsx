@@ -22,10 +22,10 @@ const Contact = () => {
       playBeep();
 
       const result = await emailjs.sendForm(
-        "service_6z78jzq",
-        "template_lk7wp7g",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        "xUmwXLuJH54AecuvR"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       if (result.text === "OK") {
