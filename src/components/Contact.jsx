@@ -51,6 +51,7 @@ const Contact = () => {
   };
   return (
     <section id="contact" className="py-20 bg-retro-dark">
+      <Toaster position="top-right" />
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -115,6 +116,7 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <form
+              ref={formRef}
               onSubmit={handleSubmit(onSubmit)}
               className="space-y-6 bg-gray-900 p-6 pixel-corners"
             >
@@ -166,11 +168,12 @@ const Contact = () => {
               </div>
               <motion.button
                 type="submit"
+                disabled={{ isSubmitting }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-neon-pink text-white py-3 font-press-start text-sm pixel-corners neon-glow"
               >
-                SEND_MESSAGE
+                {isSubmitting ? "SENDING..." : "SEND_MESSAGE"}
               </motion.button>
             </form>
           </motion.div>
