@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { init } from "./../../../node_modules/@emailjs/browser/es/methods/init/init";
 
 const GridBackground = () => {
   return (
