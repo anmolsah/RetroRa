@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import CoomingSoonPage from "../components/coming_soon/CoomingSoonPage";
 
 const Freelance = () => {
-  return (
-    <div>Freelance</div>
-  )
-}
+  return <CoomingSoonPage />;
+};
 
-export default Freelance
+export default Freelance;
