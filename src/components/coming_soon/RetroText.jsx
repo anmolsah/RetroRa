@@ -1,10 +1,11 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const RetroText = () => {
-  const letters = "COMING SOON".split(" ");
+  const letters = "COMING SOON".split("");
+
   return (
-    <div>
+    <div className="flex space-x-2">
       {letters.map((letter, index) => (
         <motion.span
           key={index}
@@ -21,7 +22,7 @@ const RetroText = () => {
           transition={{
             duration: 2,
             repeat: Infinity,
-            delay: index * 0.1,
+            delay: index * 0.01,
           }}
           className="font-press-start text-4xl md:text-6xl text-white"
         >

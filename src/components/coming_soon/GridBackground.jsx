@@ -10,7 +10,7 @@ const GridBackground = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: [0, 0.5, 0],
-            backgroundColor: ["#FF1B8D", "00E5FF", "FF1B8D"],
+            backgroundColor: ["#FF1B8D", "#00E5FF", "#FF1B8D"],
           }}
           transition={{
             duration: 4,
@@ -19,7 +19,7 @@ const GridBackground = () => {
             repeatType: "reverse",
           }}
           className="w-full h-full"
-        ></motion.div>
+        />
       ))}
     </div>
   );
