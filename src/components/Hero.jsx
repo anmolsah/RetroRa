@@ -63,7 +63,7 @@ const Hero = () => {
         </div>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <motion.button
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 25px #FF1B8D" }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-neon-pink text-white font-press-start text-sm pixel-corners neon-glow"
             onClick={() => playBeep()}
@@ -71,7 +71,7 @@ const Hero = () => {
             CONNECT ME
           </motion.button>
           <motion.button
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 25px #00E5FF" }}
             whileTap={{ scale: 0.95 }}
             className="px-12 py-4 bg-neon-cyan text-white font-press-start text-sm pixel-corners neon-glow"
             onClick={() => playBeep()}
