@@ -1,11 +1,14 @@
 import React from "react";
 import FooterLink from "./FooterLink";
 import { Github, Linkedin, Twitter } from "lucide-react";
+import MatrixRain from "../ui/MatrixRain";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-gray-900 border-t border-gray-800">
+      <MatrixRain />
+
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <div className="text-center md:text-left">
