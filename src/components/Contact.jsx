@@ -52,7 +52,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 bg-retro-dark">
+    <section id="contact" className="py-20 bg-retro-dark">
       <Toaster position="top-right" />
       <div className="container mx-auto px-4">
         <motion.h2

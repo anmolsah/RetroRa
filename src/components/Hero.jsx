@@ -68,7 +68,11 @@ const Hero = () => {
             className="px-8 py-4 bg-neon-pink text-white font-press-start text-sm pixel-corners neon-glow"
             onClick={() => playBeep()}
           >
-            CONNECT ME
+           <a 
+           href="#contact"
+           >
+           CONNECT ME
+           </a>
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: "0 0 25px #00E5FF" }}
