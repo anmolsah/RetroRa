@@ -87,7 +87,7 @@ const Hero = () => {
             onClick={() => playBeep()}
           >
             <a
-              href="../assets/updatedResume_002.pdf"
+              href="../assets/updatedResume_02.pdf"
               download="Anmol_Sah_Resume.pdf"
             >
               RESUME
