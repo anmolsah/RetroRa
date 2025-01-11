@@ -77,11 +77,11 @@ const Contact = () => {
             <div className="space-y-4 mb-8 font-ibm">
               <div className="flex items-center gap-4">
                 <span className="text-neon-pink">EMAIL:</span>
-                <span className="text-white">player1@retro.dev</span>
+                <span className="text-white">annifind010@gmail.com</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="text-neon-pink">LOCATION:</span>
-                <span className="text-white">CYBER_CITY_01</span>
+                <span className="text-white">SILIGUR_CITY_001</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="text-neon-pink">STATUS:</span>
@@ -89,11 +89,23 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex gap-4">
-              {["GITHUB", "TWITTER", "LINKEDIN"].map((platform) => (
+            <div className="flex gap-2">
+              {[
+                { platform: "GITHUB", url: "https://github.com/anmolsah" },
+                {
+                  platform: "TWITTER",
+                  url: "https://x.com/anni_i29",
+                },
+                {
+                  platform: "LINKEDIN",
+                  url: "https://www.linkedin.com/in/anmol-sah-551083238/",
+                },
+              ].map(({ platform, url }) => (
                 <motion.a
                   key={platform}
-                  href="#"
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   className="px-4 py-2 bg-gray-800 text-neon-cyan font-press-start text-xs pixel-corners hover:text-neon-pink"
                   onClick={() => playBeep()}
@@ -120,7 +132,7 @@ const Contact = () => {
                 </label>
                 <input
                   {...register("name", { required: true })}
-                  className="w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
+                  className="w-72 md:w-full lg:w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
                 />
                 {errors.name && (
                   <span className="text-neon-pink text-xs font-ibm">
@@ -138,7 +150,7 @@ const Contact = () => {
                     required: true,
                     pattern: /^\S+@\S+$/i,
                   })}
-                  className="w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
+                  className="w-72 md:w-full lg:w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
                 />
                 {errors.email && (
                   <span className="text-neon-pink text-xs font-ibm">
@@ -154,7 +166,7 @@ const Contact = () => {
                 <textarea
                   {...register("message", { required: true })}
                   rows={4}
-                  className="w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
+                  className="w-72 md:w-full lg:w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
                 />
                 {errors.message && (
                   <span className="text-neon-pink text-xs font-ibm">
@@ -168,7 +180,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-full bg-neon-pink text-white py-3 font-press-start text-sm pixel-corners neon-glow
+                className={`w-72 md:w-full lg:w-full bg-neon-pink text-white py-3 font-press-start text-sm pixel-corners neon-glow
                           ${
                             isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                           }`}
