@@ -35,8 +35,12 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-8"
         >
-          <img
-            className="w-64 h-64 rounded-lg mx-auto pixel-corners"
+          <motion.img
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 0 25px #00E5FF, 0 0 30px #00E5FF",
+            }}
+            className="w-64 h-64 rounded-full mx-auto pixel-corners"
             src={assets.image1}
             alt="Pixel Art Avatar"
           />
@@ -68,11 +72,7 @@ const Hero = () => {
             className="px-8 py-4 bg-neon-pink text-white font-press-start text-sm pixel-corners neon-glow"
             onClick={() => playBeep()}
           >
-           <a 
-           href="#contact"
-           >
-           CONNECT ME
-           </a>
+            <a href="#contact">CONNECT ME</a>
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: "0 0 25px #00E5FF" }}
