@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen bg-retro-dark flex items-center justify-center  relative overflow-hidden">
-      <div className="absolute inset-0 grid grid-cols-8 lg:grid-cols-12 md:grid-cols-12  gap-4 opacity-10">
+    <div className="min-h-screen bg-retro-dark flex items-center justify-center relative overflow-hidden">
+      <div className="absolute inset-0 grid grid-cols-8 lg:grid-cols-12 md:grid-cols-12 gap-4 opacity-10">
         {Array.from({ length: 144 }).map((_, i) => (
           <motion.div
             key={i}
@@ -23,21 +24,35 @@ const LandingPage = () => {
           ></motion.div>
         ))}
       </div>
-      <div className="container sm:inline-block px-16 space-y-12 lg:space-y-0  mx-auto lg:px-4 lg:flex justify-center items-center relative z-10 max-w-4xl lg:gap-6">
-        <Button
-          onClick={() => navigate("/portfolio")}
-          variant="pink"
-          className="transfrom -translate-x-4 py-4"
+
+      <div className="container px-8 sm:px-16 mx-auto lg:px-4 flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 lg:space-x-8 relative z-10 max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
         >
-          PORTFOLIO
-        </Button>
-        <Button
-          onClick={() => navigate("/freelancing")}
-          variant="cyan"
-          className="transfrom translate-x-4 py-4"
+          <Button
+            onClick={() => navigate("/portfolio")}
+            variant="pink"
+            className="transform py-4 w-full sm:w-auto"
+          >
+            PORTFOLIO
+          </Button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
         >
-          FREELANCE
-        </Button>
+          <Button
+            onClick={() => navigate("/freelancing")}
+            variant="cyan"
+            className="transform py-4 w-full sm:w-auto"
+          >
+            FREELANCE
+          </Button>
+        </motion.div>
       </div>
     </div>
   );
