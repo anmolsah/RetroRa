@@ -7,7 +7,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-retro-dark flex items-center justify-center  relative overflow-hidden">
-      <div className="absolute inset-0 grid grid-cols-12 gap-4 opacity-10">
+      <div className="absolute inset-0 grid grid-cols-8 lg:grid-cols-12 md:grid-cols-12  gap-4 opacity-10">
         {Array.from({ length: 144 }).map((_, i) => (
           <motion.div
             key={i}
@@ -23,7 +23,7 @@ const LandingPage = () => {
           ></motion.div>
         ))}
       </div>
-      <div className="container mx-auto px-4 flex justify-center items-center relative z-10 max-w-4xl gap-6">
+      <div className="container sm:inline-block px-16 space-y-12 lg:space-y-0  mx-auto lg:px-4 lg:flex justify-center items-center relative z-10 max-w-4xl lg:gap-6">
         <Button
           onClick={() => navigate("/portfolio")}
           variant="pink"
