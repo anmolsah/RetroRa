@@ -1,34 +1,106 @@
+// import React from "react";
+// import { motion } from "framer-motion";
+
+// const RetroText = () => {
+//   const letters = "COMING SOON".split("");
+
+//   return (
+//     <div className="flex flex-wrap justify-center space-x-2">
+//       {letters.map((letter, index) => (
+//         <motion.span
+//           key={index}
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{
+//             opacity: 1,
+//             y: 0,
+//             textShadow: [
+//               "0 0 5px #FF1B8D, 0 0 10px #FF1B8D",
+//               "0 0 15px #00E5FF, 0 0 20px #00E5FF",
+//               "0 0 5px #FF1B8D, 0 0 10px #FF1B8D",
+//             ],
+//           }}
+//           transition={{
+//             duration: 2,
+//             repeat: Infinity,
+//             delay: index * 0.1,
+//           }}
+//           className="font-press-start text-2xl md:text-4xl lg:text-6xl xl:text-7xl text-white"
+//         >
+//           {letter === " " ? "\u00A0" : letter}
+//         </motion.span>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default RetroText;
+
+
+
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
 const RetroText = () => {
   const letters = "COMING SOON".split("");
+  
+  // Split the letters into two groups: one for "COMING" and one for "SOON"
+  const firstHalf = "COMING".split("");
+  const secondHalf = "SOON".split("");
 
   return (
-    <div className="flex space-x-2">
-      {letters.map((letter, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            textShadow: [
-              "0 0 5px #FF1B8D, 0 0 10px #FF1B8D",
-              "0 0 15px #00E5FF, 0 0 20px #00E5FF",
-              "0 0 5px #FF1B8D, 0 0 10px #FF1B8D",
-            ],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            delay: index * 0.01,
-          }}
-          className="font-press-start text-4xl md:text-6xl text-white"
-        >
-          {letter === " " ? "\u00A0" : letter}
-        </motion.span>
-      ))}
+    <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8">
+      <div className="flex flex-wrap justify-center">
+        {firstHalf.map((letter, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              textShadow: [
+                "0 0 5px #FF1B8D, 0 0 10px #FF1B8D",
+                "0 0 15px #00E5FF, 0 0 20px #00E5FF",
+                "0 0 5px #FF1B8D, 0 0 10px #FF1B8D",
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: index * 0.1,
+            }}
+            className="font-press-start text-5xl md:text-4xl lg:text-6xl xl:text-7xl text-white"
+          >
+            {letter === " " ? "\u00A0" : letter}
+          </motion.span>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap justify-center">
+        {secondHalf.map((letter, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              textShadow: [
+                "0 0 5px #FF1B8D, 0 0 10px #FF1B8D",
+                "0 0 15px #00E5FF, 0 0 20px #00E5FF",
+                "0 0 5px #FF1B8D, 0 0 10px #FF1B8D",
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: index * 0.1,
+            }}
+            className="font-press-start text-5xl md:text-4xl lg:text-6xl xl:text-7xl text-white"
+          >
+            {letter === " " ? "\u00A0" : letter}
+          </motion.span>
+        ))}
+      </div>
     </div>
   );
 };

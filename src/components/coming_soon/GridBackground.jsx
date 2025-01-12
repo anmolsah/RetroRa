@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const GridBackground = () => {
   return (
-    <div className="absolute inset-0 grid grid-cols-12 grid-rows-12 gap-4 opacity-10">
+    <div className="absolute inset-0 grid grid-cols-8 md:grid-cols-12 grid-rows-12 gap-4 opacity-10">
       {Array.from({ length: 144 }).map((_, i) => (
         <motion.div
           key={i}
