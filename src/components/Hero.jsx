@@ -86,10 +86,7 @@ const Hero = () => {
             className="px-12 py-4 bg-neon-cyan text-white font-press-start text-sm pixel-corners neon-glow"
             onClick={() => playBeep()}
           >
-            <a
-              href="../assets/updatedResume_02.pdf"
-              download="Anmol_Sah_Resume.pdf"
-            >
+            <a href="/updatedResume_02.pdf" download="Anmol_Sah_Resume.pdf">
               RESUME
             </a>
           </motion.button>
