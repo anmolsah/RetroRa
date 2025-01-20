@@ -132,7 +132,7 @@ const Contact = () => {
                 </label>
                 <input
                   {...register("name", { required: true })}
-                  className="w-72 md:w-full lg:w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
+                  className="w-80 md:w-full lg:w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
                 />
                 {errors.name && (
                   <span className="text-neon-pink text-xs font-ibm">
@@ -150,7 +150,7 @@ const Contact = () => {
                     required: true,
                     pattern: /^\S+@\S+$/i,
                   })}
-                  className="w-72 md:w-full lg:w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
+                  className="w-80 md:w-full lg:w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
                 />
                 {errors.email && (
                   <span className="text-neon-pink text-xs font-ibm">
@@ -166,7 +166,7 @@ const Contact = () => {
                 <textarea
                   {...register("message", { required: true })}
                   rows={4}
-                  className="w-72 md:w-full lg:w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
+                  className="w-80 md:w-full lg:w-full px-4 py-2 bg-gray-800 border-2 border-neon-cyan text-white font-ibm pixel-corners focus:border-neon-pink focus:outline-none"
                 />
                 {errors.message && (
                   <span className="text-neon-pink text-xs font-ibm">
@@ -180,7 +180,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-72 md:w-full lg:w-full bg-neon-pink text-white py-3 font-press-start text-sm pixel-corners neon-glow
+                className={`w-80 md:w-full lg:w-full bg-neon-pink text-white py-3 font-press-start text-sm pixel-corners neon-glow
                           ${
                             isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                           }`}
