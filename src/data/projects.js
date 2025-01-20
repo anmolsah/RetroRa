@@ -60,9 +60,9 @@ export const AllProjects = [
       "A simple and collaborative online whiteboard for drawing, sketching, and brainstorming.",
     image: assets.project4,
     techStack: ["HTML", "CSS", "JavaScript"],
-    demoUrl: "https://anmolsah.github.io/Boardy/whiteboard.html",
+    demoUrl: "https://boaardy.netlify.app/",
     githubUrl:
-      "https://github.com/anmolsah/anmolsah.github.io/tree/main/Boardy",
+      "https://github.com/anmolsah/Boardy",
     category: "frontend",
   },
 ];
