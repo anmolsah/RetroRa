@@ -5,6 +5,7 @@ import project3 from "./rahi1.png";
 import project4 from "./boardyy.jpg";
 import image2 from "./img-2.jpg";
 import image3 from "./my_image.jpg";
+import project5 from "./vila.png";
 
 export const assets = {
   image1,
@@ -14,4 +15,5 @@ export const assets = {
   project4,
   image2,
   image3,
+  project5,
 };
