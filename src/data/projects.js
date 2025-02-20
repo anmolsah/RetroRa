@@ -70,7 +70,7 @@ export const AllProjects = [
     description:
       "A code reviewer that reviews code, finds bugs, fixes them, and suggests other possibilities to improve the code. Utilizes Gemini's latest model for code review.",
     image: assets.project5,
-    techStack: ["React", "TailwindCSS","GEMINI API","NodeJS","ExpressJS"],
+    techStack: ["React", "TailwindCSS", "GEMINI API", "NodeJS", "ExpressJS"],
     demoUrl: "https://vila-code-reviewer-um9c.vercel.app/",
     githubUrl: "https://github.com/anmolsah/VilaCodeReviewer-",
     category: "fullstack",
