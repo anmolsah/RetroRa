@@ -41,7 +41,7 @@ const Hero = () => {
               boxShadow: "0 0 25px #00E5FF, 0 0 30px #00E5FF",
             }}
             className="w-64 h-64 rounded-full mx-auto pixel-corners"
-            src={assets.image1}
+            src={assets.image2}
             alt="Pixel Art Avatar"
           />
         </motion.div>
