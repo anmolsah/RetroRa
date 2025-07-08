@@ -1,17 +1,20 @@
 import React from "react";
-import useSound from "use-sound";
 import { motion } from "framer-motion";
 import { Terminal, Cpu, Code2 } from "lucide-react";
+import useSound from "use-sound";
 
 const About = () => {
-  const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.5 });
+  const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.3 });
+
   return (
     <section className="py-20 bg-gray-900 relative overflow-hidden">
+      {/* Retro Grid Background */}
       <div className="absolute inset-0 grid grid-cols-12 gap-4 opacity-5">
         {Array.from({ length: 12 }).map((_, i) => (
           <div key={i} className="border-r border-neon-cyan h-full" />
         ))}
       </div>
+
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,46 +25,72 @@ const About = () => {
           <div className="relative">
             <div className="pixel-corners bg-gray-800 p-6 border-l-2 border-neon-pink">
               <h2 className="text-3xl font-press-start mb-6 text-neon-cyan">
-                <span className="text-neon-pink">&gt;</span>ABOUT.exe
+                <span className="text-neon-pink">&gt;</span> ABOUT.exe
               </h2>
               <div className="space-y-4 font-ibm text-gray-300">
                 <p className="typing-effect">
-                  <span className="text-neon-pink">$</span>
-                  Initializing profile...
+                  <span className="text-neon-pink">$</span> Initializing
+                  developer profile...
                 </p>
                 <p>
-                  I'm a motivated software developer eager to apply my skills
-                  and learn new technologies. I am passionate about building
+                  I'm a motivated software developer eager to apply my skills 
+                  and learn new technologies. I am passionate about building 
                   creative and efficient solutions to everyday problems.
                 </p>
                 <p className="text-neon-cyan">
-                  STATUS: Looking for opportunities to grow
+                    STATUS: Looking for opportunities to grow
                 </p>
               </div>
             </div>
           </div>
+
           <div className="space-y-6">
             <h3 className="font-press-start text-xl text-neon-gold mb-8">
-              TECH_STACK
+              SERVICES_OFFERED
             </h3>
+
             {[
               {
-                year: "2023",
-                title: "Self-Taught Developer",
-                company: "Personal Projects",
+                code: "01",
+                title: "Responsive Website Development",
+                description: "Mobile-first responsive designs",
                 icon: Code2,
               },
               {
-                year: "2022",
-                title: "TA(teaching Assistant)",
-                company: "Coding Ninjas",
+                code: "02",
+                title: "Figma to HTML Conversion",
+                description: "Pixel-perfect implementations",
                 icon: Terminal,
               },
               {
-                year: "2021",
-                title: "Freelancer",
-                company: "Freelance Projects",
+                code: "03",
+                title: "React.js Frontend Development",
+                description: "Modern component-based apps",
                 icon: Cpu,
+              },
+              {
+                code: "04",
+                title: "Landing Pages",
+                description: "High-converting landing pages",
+                icon: Code2,
+              },
+              {
+                code: "05",
+                title: "Full Website Creation",
+                description: "Complete web solutions",
+                icon: Terminal,
+              },
+              {
+                code: "06",
+                title: "Personal Portfolio Sites",
+                description: "Professional portfolio websites",
+                icon: Cpu,
+              },
+              {
+                code: "07",
+                title: "Full Stack Development",
+                description: "End-to-end web applications",
+                icon: Code2,
               },
             ].map((item, index) => (
               <motion.div
@@ -74,19 +103,21 @@ const About = () => {
                 onHoverStart={() => playBeep()}
                 className="flex gap-4 items-start group cursor-pointer"
               >
-                <div className="w-24 flex-shrink-0 ">
+                <div className="w-24 flex-shrink-0">
                   <span className="text-sm font-press-start text-neon-cyan">
-                    {item.year}
+                    {item.code}
                   </span>
                 </div>
-                <div className="flex-1 pb-6 border-l-2 border-gray-800 pl-4 group-hover:border-neon-pink transition-colors duration-400">
+                <div className="flex-1 pb-6 border-l-2 border-gray-800 pl-4 group-hover:border-neon-pink transition-colors duration-300">
                   <div className="flex items-center gap-2">
                     <item.icon className="w-5 h-5 text-neon-pink" />
                     <h4 className="font-press-start text-sm text-white">
                       {item.title}
                     </h4>
                   </div>
-                  <p className="text-gray-400 mt-2 font-ibm">{item.company}</p>
+                  <p className="text-gray-400 mt-2 font-ibm">
+                    {item.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -98,3 +129,104 @@ const About = () => {
 };
 
 export default About;
+
+// import React from "react";
+// import useSound from "use-sound";
+// import { motion } from "framer-motion";
+// import { Terminal, Cpu, Code2 } from "lucide-react";
+
+// const About = () => {
+//   const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.5 });
+//   return (
+//     <section className="py-20 bg-gray-900 relative overflow-hidden">
+//       <div className="absolute inset-0 grid grid-cols-12 gap-4 opacity-5">
+//         {Array.from({ length: 12 }).map((_, i) => (
+//           <div key={i} className="border-r border-neon-cyan h-full" />
+//         ))}
+//       </div>
+//       <div className="container mx-auto px-4">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           className="grid md:grid-cols-2 gap-12 items-center"
+//         >
+//           <div className="relative">
+//             <div className="pixel-corners bg-gray-800 p-6 border-l-2 border-neon-pink">
+//               <h2 className="text-3xl font-press-start mb-6 text-neon-cyan">
+//                 <span className="text-neon-pink">&gt;</span>ABOUT.exe
+//               </h2>
+//               <div className="space-y-4 font-ibm text-gray-300">
+//                 <p className="typing-effect">
+//                   <span className="text-neon-pink">$</span>
+//                   Initializing profile...
+//                 </p>
+//                 <p>
+//                   I'm a motivated software developer eager to apply my skills
+//                   and learn new technologies. I am passionate about building
+//                   creative and efficient solutions to everyday problems.
+//                 </p>
+//                 <p className="text-neon-cyan">
+//                   STATUS: Looking for opportunities to grow
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//           <div className="space-y-6">
+//             <h3 className="font-press-start text-xl text-neon-gold mb-8">
+//               TECH_STACK
+//             </h3>
+//             {[
+//               {
+//                 year: "2023",
+//                 title: "Self-Taught Developer",
+//                 company: "Personal Projects",
+//                 icon: Code2,
+//               },
+//               {
+//                 year: "2022",
+//                 title: "TA(teaching Assistant)",
+//                 company: "Coding Ninjas",
+//                 icon: Terminal,
+//               },
+//               {
+//                 year: "2021",
+//                 title: "Freelancer",
+//                 company: "Freelance Projects",
+//                 icon: Cpu,
+//               },
+//             ].map((item, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, x: -20 }}
+//                 whileInView={{ opacity: 1, x: 0 }}
+//                 viewport={{ once: true }}
+//                 transition={{ delay: index * 0.2 }}
+//                 whileHover={{ x: 10 }}
+//                 onHoverStart={() => playBeep()}
+//                 className="flex gap-4 items-start group cursor-pointer"
+//               >
+//                 <div className="w-24 flex-shrink-0 ">
+//                   <span className="text-sm font-press-start text-neon-cyan">
+//                     {item.year}
+//                   </span>
+//                 </div>
+//                 <div className="flex-1 pb-6 border-l-2 border-gray-800 pl-4 group-hover:border-neon-pink transition-colors duration-400">
+//                   <div className="flex items-center gap-2">
+//                     <item.icon className="w-5 h-5 text-neon-pink" />
+//                     <h4 className="font-press-start text-sm text-white">
+//                       {item.title}
+//                     </h4>
+//                   </div>
+//                   <p className="text-gray-400 mt-2 font-ibm">{item.company}</p>
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </motion.div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default About;

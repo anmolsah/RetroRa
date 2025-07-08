@@ -45,9 +45,31 @@ const Hero = () => {
             alt="Pixel Art Avatar"
           />
         </motion.div>
-        <h1 className="text-4xl md:text-4xl font-press-start mb-6 text-neon-pink neon-glow">
+        {/* <h1 className="text-4xl md:text-4xl font-press-start mb-6 text-neon-pink neon-glow">
           ANMOL SAH.
-        </h1>
+        </h1> */}
+        <motion.h1
+          className="text-4xl md:text-6xl font-press-start mb-6 text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-pink bg-300% animate-gradient"
+          animate={{
+            textShadow: [
+              "0 0 7px #FF1B8D",
+              "0 0 10px #FF1B8D",
+              "0 0 21px #FF1B8D",
+              "0 0 42px #FF1B8D",
+              "0 0 82px #FF1B8D",
+              "0 0 92px #FF1B8D",
+              "0 0 102px #FF1B8D",
+              "0 0 151px #FF1B8D",
+            ]
+          }}
+          transition={{
+            duration: 0.5,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        >
+          ANMOL SAH
+        </motion.h1>
         <div className="h-16 mb-8 text-neon-cyan">
           <Typewriter
             options={{

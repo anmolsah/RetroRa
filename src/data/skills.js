@@ -93,6 +93,22 @@ export const skills = [
     years: 3,
     category: "Frontend",
   },
+
+  {
+    name: "Supabase",
+    icon: "database",
+    proficiency: 45,
+    years: 1,
+    category: "Backend"
+  },
+
+   {
+    name: "Firebase",
+    icon: "cloud",
+    proficiency: 50,
+    years: 1,
+    category: "Backend"
+  },
   {
     name: "VS Code",
     icon: "vscode",
