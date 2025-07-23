@@ -32,7 +32,7 @@ export const AllProjects = [
       "GEMINI API",
       "TailwindCSS",
     ],
-    demoUrl: "https://netflixgemini.onrender.com",
+    demoUrl: "https://streaminga-app-gemini.vercel.app/",
     githubUrl: "https://github.com/anmolsah/NetflixGemini",
     category: "frontend",
   },
