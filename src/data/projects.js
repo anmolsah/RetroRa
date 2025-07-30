@@ -20,20 +20,19 @@ export const AllProjects = [
   },
   {
     id: 2,
-    title: "NetflixGemini",
+    title: "Movieco",
     description:
-      "A Netflix clone powered by GEMINI API for personalized movie recommendations. Built with React, Redux, and Firebase.",
+      "Movieco is powered by GEMINI API and TMDB API for personalized movie recommendations. Built with React, Tailwind, and Supabase.",
     image: assets.project2,
     techStack: [
       "ReactJS",
-      "Redux",
-      "Firebase",
+      "Supabase",
       "TMDB API",
       "GEMINI API",
       "TailwindCSS",
     ],
-    demoUrl: "https://streaminga-app-gemini.vercel.app/",
-    githubUrl: "https://github.com/anmolsah/NetflixGemini",
+    demoUrl: "https://movieco-ubb9.vercel.app/",
+    githubUrl: "https://github.com/anmolsah/movieco/tree/main/movieco",
     category: "frontend",
   },
   {
