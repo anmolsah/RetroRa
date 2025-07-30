@@ -9,7 +9,7 @@ import project5 from "./vila.png";
 import project6 from "./firstissue01.png";
 import project7 from "./firstissue02.png";
 import project8 from "./movieco1.png";
-import project9 from "./movieco2.png";
+import project9 from "./Movieco2.png";
 
 export const assets = {
   image1,

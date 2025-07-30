@@ -24,13 +24,7 @@ export const AllProjects = [
     description:
       "Movieco is powered by GEMINI API and TMDB API for personalized movie recommendations. Built with React, Tailwind, and Supabase.",
     image: assets.project8,
-    techStack: [
-      "ReactJS",
-      "Supabase",
-      "TMDB API",
-      "GEMINI API",
-      "TailwindCSS",
-    ],
+    techStack: ["ReactJS", "Supabase", "TMDB API", "GEMINI API", "TailwindCSS"],
     demoUrl: "https://movieco-ubb9.vercel.app/",
     githubUrl: "https://github.com/anmolsah/movieco/tree/main/movieco",
     category: "frontend",
@@ -81,7 +75,13 @@ export const AllProjects = [
     description:
       "A platform that helps beginners discover genuine, beginner-friendly GitHub issues, bookmark them, and track their open-source journey — powered by GitHub API, Supabase, and React.",
     image: assets.project6 || assets.project7,
-    techStack: ["ReactJS", "TailwindCSS", "Github API", "Supabase", "Github OAUTH"],
+    techStack: [
+      "ReactJS",
+      "TailwindCSS",
+      "Github API",
+      "Supabase",
+      "Github OAUTH",
+    ],
     demoUrl: "https://www.firstissue.dev/",
     githubUrl: "https://github.com/anmolsah/firstissue.dev",
     category: "fullstack",
