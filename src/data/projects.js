@@ -23,7 +23,7 @@ export const AllProjects = [
     title: "Movieco",
     description:
       "Movieco is powered by GEMINI API and TMDB API for personalized movie recommendations. Built with React, Tailwind, and Supabase.",
-    image: assets.project2,
+    image: assets.project8,
     techStack: [
       "ReactJS",
       "Supabase",
