@@ -89,10 +89,10 @@ const Hero = () => {
         </div>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://x.com/anni_i29"
-            >
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://x.com/anni_i29"
+          >
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 0 25px #FF1B8D" }}
               whileTap={{ scale: 0.95 }}
