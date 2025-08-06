@@ -40,7 +40,7 @@ const Hero = () => {
               scale: 1.05,
               boxShadow: "0 0 25px #00E5FF, 0 0 30px #00E5FF",
             }}
-            className="w-64 h-64 rounded-full mx-auto pixel-corners"
+            className="w-64 h-64 object-cover rounded-full mx-auto pixel-corners"
             src={assets.image2}
             alt="Pixel Art Avatar"
           />
