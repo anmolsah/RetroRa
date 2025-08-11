@@ -40,7 +40,7 @@ const Hero = () => {
               scale: 1.05,
               boxShadow: "0 0 25px #00E5FF, 0 0 30px #00E5FF",
             }}
-            className="w-64 h-64 rounded-full mx-auto pixel-corners"
+            className="w-64 h-64 object-cover rounded-full mx-auto pixel-corners"
             src={assets.image2}
             alt="Pixel Art Avatar"
           />
@@ -88,30 +88,32 @@ const Hero = () => {
           />
         </div>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <motion.button
-            whileHover={{ scale: 1.05, boxShadow: "0 0 25px #FF1B8D" }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-neon-pink text-white font-press-start text-sm pixel-corners neon-glow"
-            onClick={() => playBeep()}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://x.com/anni_i29"
           >
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://x.com/anni_i29"
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 0 25px #FF1B8D" }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-neon-pink text-white font-press-start text-sm pixel-corners neon-glow"
+              onClick={() => playBeep()}
             >
-              CONNECT ME
-            </a>
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05, boxShadow: "0 0 25px #00E5FF" }}
-            whileTap={{ scale: 0.95 }}
-            className="px-12 py-4 bg-neon-cyan text-white font-press-start text-sm pixel-corners neon-glow"
-            onClick={() => playBeep()}
-          >
-            <a href="/AnomlUpdatedResume_006.pdf" download="Anmol_Sah_Resume.pdf">
-              RESUME
-            </a>
-          </motion.button>
+            
+              CONTACT ME
+            
+            </motion.button>
+          </a>
+          <a href="/AnomlUpdatedResume_006.pdf" download="Anmol_Sah_Resume.pdf">
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 0 25px #00E5FF" }}
+              whileTap={{ scale: 0.95 }}
+              className="px-12 py-4 bg-neon-cyan text-white font-press-start text-sm pixel-corners neon-glow"
+              onClick={() => playBeep()}
+            >
+            RESUME
+            </motion.button>
+          </a>
         </div>
       </motion.div>
     </section>
